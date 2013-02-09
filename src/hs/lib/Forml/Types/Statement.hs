@@ -103,7 +103,7 @@ instance Syntax Statement where
 
                             do many1 (char ' ')
                                string "as"
-                               many1 $ (char ' ')
+                               many1 (char ' ')
                                (Symbol x) <- syntax
                                return  (Just x)
 
