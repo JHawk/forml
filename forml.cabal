@@ -16,7 +16,7 @@ data-files:
   lib/js/jasmine-1.0.1/jasmine.js, 
   lib/js/jquery.js, 
   lib/js/lang-hs.js, 
-  lib/js/prettify.js, 
+  lib/js/prettify.js,
   src/forml/parsec.forml, 
   src/forml/prelude.forml, 
   src/forml/tests.forml, 
@@ -69,7 +69,7 @@ Library
     ghc-options: -Wall -fwarn-tabs -funbox-strict-fields
                  -fno-warn-unused-do-bind -threaded
                  -funfolding-use-threshold=16 -fexcess-precision
-                 -optc-O3 -optc-ffast-math
+                 -optc-O3 -optc-ffast-math -fno-warn-missing-signatures
   else
     ghc-options: -Wall -fwarn-tabs -funbox-strict-fields
 
@@ -115,7 +115,7 @@ Executable forml
     ghc-options: -Wall -fwarn-tabs -funbox-strict-fields
                  -fno-warn-unused-do-bind -threaded
                  -funfolding-use-threshold=16 -fexcess-precision
-                 -optc-O3 -optc-ffast-math
+                 -optc-O3 -optc-ffast-math -fno-warn-missing-signatures
   else
     ghc-options: -Wall -fwarn-tabs -funbox-strict-fields
 

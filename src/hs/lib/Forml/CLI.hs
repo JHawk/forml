@@ -27,12 +27,14 @@ data RunConfig = RunConfig { inputs :: [String]
                            , implicit_prelude :: Bool
                            , watch :: Bool }
 
+default_run_config :: RunConfig
+default_run_config = RunConfig [] "default" False True False False False False Phantom False True False
 
 parseArgs :: [String] -> RunConfig
 parseArgs = fst . runState argsParser
   where argsParser = do args <- get
                         case args of
-                          []      -> return $ RunConfig [] "default" False True False False False False Phantom False True False
+                          []      -> return $ default_run_config
                           (x':xs) -> do put xs
                                         case x' of
                                           "-w"          -> do x <- argsParser
